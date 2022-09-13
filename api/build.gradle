@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    // ЗАДАЧА №2, Для подключения модуля service в модуль api добавим зависимость:
+    implementation project(":db")
+    implementation project(":service")
+}
+
+test {
+    useJUnitPlatform()
+}
